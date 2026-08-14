@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { MotionConfig } from "motion/react";
 import { josefinSans, righteous } from "@/lib/fonts";
 import { SkipLink } from "@/components/ui/skip-link";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { CookieBanner } from "@/components/ui/cookie-banner";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -24,9 +27,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         */}
         <MotionConfig reducedMotion="user">
           <SkipLink />
+          <Header />
           <main id="main-content" className="flex flex-1 flex-col">
             {children}
           </main>
+          <Footer />
+          <CookieBanner />
         </MotionConfig>
       </body>
     </html>
