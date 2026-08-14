@@ -1,0 +1,109 @@
+# Missing data
+
+Every unavailable item discovered during the crawl is recorded below.
+
+- URL/asset: `https://sukaya.com.au/ols/products`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/berry-light-soothe-serum`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/cleanser-exfoliator-mask---pink-blush`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/rosewood-spoon`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/patchouli-face-cleansing-oil`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/geranium-lip-balm`
+  - Status: 429
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/original-body-butter`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/super-fruits-face-elixir`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/trial-collection`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/all-in-one-lavender-balm`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/products/body-oil`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/face`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/cleanser-exfoliator-mask`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/body-oils`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/balms`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/samples--minis`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/face-serums`
+  - Status: 429
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/body-butters`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/face-cleansing-oil`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/ols/categories/accessories--essentials`
+  - Status: 404
+  - Reason: HTTP error
+  - Manual recovery: YES
+- URL/asset: `https://sukaya.com.au/m/cr=w:128`
+  - Status: NOT ACCESSIBLE
+  - Reason: Asset download failed
+  - Manual recovery: MAY BE REQUIRED
+- URL/asset: `https://sukaya.com.au/m/cr=w:256`
+  - Status: NOT ACCESSIBLE
+  - Reason: Asset download failed
+  - Manual recovery: MAY BE REQUIRED
+- URL/asset: `https://sukaya.com.au/m/cr=w:384`
+  - Status: NOT ACCESSIBLE
+  - Reason: Asset download failed
+  - Manual recovery: MAY BE REQUIRED
+- URL/asset: `https://sukaya.com.au/SUKAYA SKIN CARE`
+  - Status: NOT ACCESSIBLE
+  - Reason: Asset download failed
+  - Manual recovery: MAY BE REQUIRED
+- URL/asset: `https://sukaya.com.au/e.url,s.base`
+  - Status: NOT ACCESSIBLE
+  - Reason: Asset download failed
+  - Manual recovery: MAY BE REQUIRED
+
+## Rendered verification
+
+- Desktop/tablet/mobile screenshots: NOT ACCESSIBLE. The controlled browser returned `ERR_NETWORK_CHANGED`; no screenshots were fabricated.
+- JavaScript-rendered storefront product payload: NOT ACCESSIBLE. Direct API returned HTTP 403 and sitemap product routes returned HTTP 404/429.

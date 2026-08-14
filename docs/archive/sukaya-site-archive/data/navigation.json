@@ -1,0 +1,102 @@
+[
+  {
+    "label": "",
+    "url": "/",
+    "aria_label": null
+  },
+  {
+    "label": "",
+    "url": "https://sukaya.com.au/shop?olsPage=cart",
+    "aria_label": "Shopping Cart Icon"
+  },
+  {
+    "label": "",
+    "url": "#",
+    "aria_label": "Hamburger Site Navigation Icon"
+  },
+  {
+    "label": "",
+    "url": "/",
+    "aria_label": null
+  },
+  {
+    "label": "Home",
+    "url": "/",
+    "aria_label": null
+  },
+  {
+    "label": "Shop",
+    "url": "/shop",
+    "aria_label": null
+  },
+  {
+    "label": "More",
+    "url": "#",
+    "aria_label": null
+  },
+  {
+    "label": "Home",
+    "url": "/",
+    "aria_label": null
+  },
+  {
+    "label": "Shop",
+    "url": "/shop",
+    "aria_label": null
+  },
+  {
+    "label": "",
+    "url": "https://sukaya.com.au/shop?olsPage=cart",
+    "aria_label": "Shopping Cart Icon"
+  },
+  {
+    "label": "Home",
+    "url": "/",
+    "aria_label": null
+  },
+  {
+    "label": "Shop",
+    "url": "/shop",
+    "aria_label": null
+  },
+  {
+    "label": "enquiries@sukaya.com.au",
+    "url": "mailto:enquiries@sukaya.com.au",
+    "aria_label": null
+  },
+  {
+    "label": "Shop Now",
+    "url": "/",
+    "aria_label": null
+  },
+  {
+    "label": "enquiries@sukaya.com.au",
+    "url": "mailto:enquiries@sukaya.com.au",
+    "aria_label": null
+  },
+  {
+    "label": "",
+    "url": "https://www.godaddy.com/websites/website-builder?isc=pwugc&utm_source=wsb&utm_medium=applications&utm_campaign=en-in_corp_applications_base",
+    "aria_label": null
+  },
+  {
+    "label": "Privacy Policy",
+    "url": "/privacy-policy",
+    "aria_label": null
+  },
+  {
+    "label": "Terms and Conditions",
+    "url": "/terms-and-conditions",
+    "aria_label": null
+  },
+  {
+    "label": "Decline",
+    "url": "",
+    "aria_label": null
+  },
+  {
+    "label": "Accept",
+    "url": "",
+    "aria_label": null
+  }
+]

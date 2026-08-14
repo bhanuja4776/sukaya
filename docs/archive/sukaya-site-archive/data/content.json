@@ -1,0 +1,1007 @@
+[
+  {
+    "url": "https://sukaya.com.au/",
+    "final_url": "https://sukaya.com.au/",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "redirect_history": [],
+    "title": "SUKAYA SKIN CARE",
+    "meta_description": "",
+    "canonical": "",
+    "headings": {
+      "h1": [
+        "Pure & Natural Skin Care Solutions"
+      ],
+      "h2": [
+        "About Sukaya",
+        "Featured Products",
+        "Explore our stunning range of natural beauty",
+        "Raving Fans",
+        "Contact Us"
+      ],
+      "h3": [
+        "Subscribe"
+      ]
+    },
+    "word_count": 456,
+    "links": [
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/shop?olsPage=cart"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/shop?olsPage=cart"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "Shop Now",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "",
+        "url": "https://www.godaddy.com/websites/website-builder?isc=pwugc&utm_source=wsb&utm_medium=applications&utm_campaign=en-in_corp_applications_base"
+      },
+      {
+        "label": "Privacy Policy",
+        "url": "https://sukaya.com.au/privacy-policy"
+      },
+      {
+        "label": "Terms and Conditions",
+        "url": "https://sukaya.com.au/terms-and-conditions"
+      }
+    ],
+    "forms": [
+      {
+        "action": "https://sukaya.com.au/",
+        "method": "get",
+        "fields": [
+          {
+            "name": "keywords",
+            "type": null,
+            "placeholder": "Search Products",
+            "required": false
+          }
+        ]
+      },
+      {
+        "action": "https://sukaya.com.au/",
+        "method": "get",
+        "fields": [
+          {
+            "name": null,
+            "type": "text",
+            "placeholder": null,
+            "required": false
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      "",
+      "",
+      "",
+      "",
+      "Get directions",
+      "Sign up"
+    ],
+    "metadata": [
+      {
+        "name": null,
+        "content": null
+      },
+      {
+        "name": "X-UA-Compatible",
+        "content": "IE=edge"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "author",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "generator",
+        "content": "Starfield Technologies; Go Daddy Website Builder 8.0.0000"
+      },
+      {
+        "name": "og:url",
+        "content": "https://sukaya.com.au/"
+      },
+      {
+        "name": "og:site_name",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:description",
+        "content": "Discover natural, minimalistic skincare for radiant skin."
+      },
+      {
+        "name": "og:type",
+        "content": "website"
+      },
+      {
+        "name": "og:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "og:locale",
+        "content": "en_IN"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "twitter:description",
+        "content": "Pure & Natural Skin Care Solutions"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "twitter:image:alt",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "theme-color",
+        "content": "#547d54"
+      }
+    ],
+    "raw_html": "raw/html/sukaya.com.au.html",
+    "content_file": "content/pages/sukaya.com.au.md",
+    "page_type": "page"
+  },
+  {
+    "url": "https://sukaya.com.au/robots.txt",
+    "final_url": "https://sukaya.com.au/robots.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/sitemap.xml",
+    "final_url": "https://sukaya.com.au/sitemap.xml",
+    "status": 200,
+    "content_type": "application/xml; charset=utf-8",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/shop?olsPage=cart",
+    "final_url": "https://sukaya.com.au/shop?olsPage=cart",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "redirect_history": [],
+    "title": "SUKAYA SKIN CARE",
+    "meta_description": "",
+    "canonical": "",
+    "headings": {
+      "h1": [
+        "This website uses cookies."
+      ],
+      "h2": [],
+      "h3": []
+    },
+    "word_count": 57,
+    "links": [
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "",
+        "url": "https://www.godaddy.com/websites/website-builder?isc=pwugc&utm_source=wsb&utm_medium=applications&utm_campaign=en-in_corp_applications_base"
+      },
+      {
+        "label": "Privacy Policy",
+        "url": "https://sukaya.com.au/privacy-policy"
+      },
+      {
+        "label": "Terms and Conditions",
+        "url": "https://sukaya.com.au/terms-and-conditions"
+      }
+    ],
+    "forms": [
+      {
+        "action": "https://sukaya.com.au/shop?olsPage=cart",
+        "method": "get",
+        "fields": [
+          {
+            "name": "keywords",
+            "type": null,
+            "placeholder": "Search Products",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "buttons": [],
+    "metadata": [
+      {
+        "name": null,
+        "content": null
+      },
+      {
+        "name": "X-UA-Compatible",
+        "content": "IE=edge"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "author",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "generator",
+        "content": "Starfield Technologies; Go Daddy Website Builder 8.0.0000"
+      },
+      {
+        "name": "og:url",
+        "content": "https://sukaya.com.au/shop"
+      },
+      {
+        "name": "og:site_name",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:description",
+        "content": "Discover natural, minimalistic skincare for radiant skin."
+      },
+      {
+        "name": "og:type",
+        "content": "website"
+      },
+      {
+        "name": "og:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "og:locale",
+        "content": "en_IN"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "twitter:description",
+        "content": "Pure & Natural Skin Care Solutions"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "twitter:image:alt",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "theme-color",
+        "content": "#547d54"
+      }
+    ],
+    "raw_html": "raw/html/sukaya.com.au_shop_a1b28bcc9e.html",
+    "content_file": "content/pages/sukaya.com.au_shop_a1b28bcc9e.md",
+    "page_type": "page"
+  },
+  {
+    "url": "https://sukaya.com.au/shop",
+    "final_url": "https://sukaya.com.au/shop",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "redirect_history": [],
+    "title": "SUKAYA SKIN CARE",
+    "meta_description": "",
+    "canonical": "",
+    "headings": {
+      "h1": [
+        "This website uses cookies."
+      ],
+      "h2": [],
+      "h3": []
+    },
+    "word_count": 57,
+    "links": [
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "",
+        "url": "https://www.godaddy.com/websites/website-builder?isc=pwugc&utm_source=wsb&utm_medium=applications&utm_campaign=en-in_corp_applications_base"
+      },
+      {
+        "label": "Privacy Policy",
+        "url": "https://sukaya.com.au/privacy-policy"
+      },
+      {
+        "label": "Terms and Conditions",
+        "url": "https://sukaya.com.au/terms-and-conditions"
+      }
+    ],
+    "forms": [
+      {
+        "action": "https://sukaya.com.au/shop",
+        "method": "get",
+        "fields": [
+          {
+            "name": "keywords",
+            "type": null,
+            "placeholder": "Search Products",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "buttons": [],
+    "metadata": [
+      {
+        "name": null,
+        "content": null
+      },
+      {
+        "name": "X-UA-Compatible",
+        "content": "IE=edge"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "author",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "generator",
+        "content": "Starfield Technologies; Go Daddy Website Builder 8.0.0000"
+      },
+      {
+        "name": "og:url",
+        "content": "https://sukaya.com.au/shop"
+      },
+      {
+        "name": "og:site_name",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:description",
+        "content": "Discover natural, minimalistic skincare for radiant skin."
+      },
+      {
+        "name": "og:type",
+        "content": "website"
+      },
+      {
+        "name": "og:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "og:locale",
+        "content": "en_IN"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "twitter:description",
+        "content": "Pure & Natural Skin Care Solutions"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "twitter:image:alt",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "theme-color",
+        "content": "#547d54"
+      }
+    ],
+    "raw_html": "raw/html/sukaya.com.au_shop.html",
+    "content_file": "content/pages/sukaya.com.au_shop.md",
+    "page_type": "page"
+  },
+  {
+    "url": "https://sukaya.com.au/privacy-policy",
+    "final_url": "https://sukaya.com.au/privacy-policy",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "redirect_history": [],
+    "title": "SUKAYA SKIN CARE",
+    "meta_description": "",
+    "canonical": "",
+    "headings": {
+      "h1": [
+        "Privacy Policy"
+      ],
+      "h2": [],
+      "h3": []
+    },
+    "word_count": 63,
+    "links": [
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/shop?olsPage=cart"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/shop?olsPage=cart"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "",
+        "url": "https://www.godaddy.com/websites/website-builder?isc=pwugc&utm_source=wsb&utm_medium=applications&utm_campaign=en-in_corp_applications_base"
+      },
+      {
+        "label": "Privacy Policy",
+        "url": "https://sukaya.com.au/privacy-policy"
+      },
+      {
+        "label": "Terms and Conditions",
+        "url": "https://sukaya.com.au/terms-and-conditions"
+      }
+    ],
+    "forms": [
+      {
+        "action": "https://sukaya.com.au/privacy-policy",
+        "method": "get",
+        "fields": [
+          {
+            "name": "keywords",
+            "type": null,
+            "placeholder": "Search Products",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "buttons": [],
+    "metadata": [
+      {
+        "name": null,
+        "content": null
+      },
+      {
+        "name": "X-UA-Compatible",
+        "content": "IE=edge"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "author",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "generator",
+        "content": "Starfield Technologies; Go Daddy Website Builder 8.0.0000"
+      },
+      {
+        "name": "og:url",
+        "content": "https://sukaya.com.au/privacy-policy"
+      },
+      {
+        "name": "og:site_name",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:description",
+        "content": "Discover natural, minimalistic skincare for radiant skin."
+      },
+      {
+        "name": "og:type",
+        "content": "website"
+      },
+      {
+        "name": "og:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "og:locale",
+        "content": "en_IN"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "twitter:description",
+        "content": "Pure & Natural Skin Care Solutions"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "twitter:image:alt",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "theme-color",
+        "content": "#547d54"
+      }
+    ],
+    "raw_html": "raw/html/sukaya.com.au_privacy-policy.html",
+    "content_file": "content/pages/sukaya.com.au_privacy-policy.md",
+    "page_type": "policy"
+  },
+  {
+    "url": "https://sukaya.com.au/terms-and-conditions",
+    "final_url": "https://sukaya.com.au/terms-and-conditions",
+    "status": 200,
+    "content_type": "text/html;charset=utf-8",
+    "redirect_history": [],
+    "title": "SUKAYA SKIN CARE",
+    "meta_description": "",
+    "canonical": "",
+    "headings": {
+      "h1": [
+        "Terms and Conditions"
+      ],
+      "h2": [
+        "Return and Refund Policy"
+      ],
+      "h3": []
+    },
+    "word_count": 66,
+    "links": [
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/shop?olsPage=cart"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "",
+        "url": "https://sukaya.com.au/shop?olsPage=cart"
+      },
+      {
+        "label": "Home",
+        "url": "https://sukaya.com.au/"
+      },
+      {
+        "label": "Shop",
+        "url": "https://sukaya.com.au/shop"
+      },
+      {
+        "label": "",
+        "url": "https://www.godaddy.com/websites/website-builder?isc=pwugc&utm_source=wsb&utm_medium=applications&utm_campaign=en-in_corp_applications_base"
+      },
+      {
+        "label": "Privacy Policy",
+        "url": "https://sukaya.com.au/privacy-policy"
+      },
+      {
+        "label": "Terms and Conditions",
+        "url": "https://sukaya.com.au/terms-and-conditions"
+      }
+    ],
+    "forms": [
+      {
+        "action": "https://sukaya.com.au/terms-and-conditions",
+        "method": "get",
+        "fields": [
+          {
+            "name": "keywords",
+            "type": null,
+            "placeholder": "Search Products",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "buttons": [],
+    "metadata": [
+      {
+        "name": null,
+        "content": null
+      },
+      {
+        "name": "X-UA-Compatible",
+        "content": "IE=edge"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "author",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "generator",
+        "content": "Starfield Technologies; Go Daddy Website Builder 8.0.0000"
+      },
+      {
+        "name": "og:url",
+        "content": "https://sukaya.com.au/terms-and-conditions"
+      },
+      {
+        "name": "og:site_name",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "og:description",
+        "content": "Discover natural, minimalistic skincare for radiant skin."
+      },
+      {
+        "name": "og:type",
+        "content": "website"
+      },
+      {
+        "name": "og:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "og:locale",
+        "content": "en_IN"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary"
+      },
+      {
+        "name": "twitter:title",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "twitter:description",
+        "content": "Pure & Natural Skin Care Solutions"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://img1.wsimg.com/isteam/ip/ef52d3fd-20a0-4d24-8277-f423cfb9cf9b/Gemini_Generated_Image_j5auh1j5auh1j5au.png"
+      },
+      {
+        "name": "twitter:image:alt",
+        "content": "SUKAYA SKIN CARE "
+      },
+      {
+        "name": "theme-color",
+        "content": "#547d54"
+      }
+    ],
+    "raw_html": "raw/html/sukaya.com.au_terms-and-conditions.html",
+    "content_file": "content/pages/sukaya.com.au_terms-and-conditions.md",
+    "page_type": "policy"
+  },
+  {
+    "url": "https://sukaya.com.au/sitemap.website.xml",
+    "final_url": "https://sukaya.com.au/sitemap.website.xml",
+    "status": 200,
+    "content_type": "application/xml; charset=utf-8",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/sitemap.ols.xml",
+    "final_url": "https://sukaya.com.au/sitemap.ols.xml",
+    "status": 200,
+    "content_type": "application/xml; charset=utf-8",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products",
+    "final_url": "https://sukaya.com.au/ols/products",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/berry-light-soothe-serum",
+    "final_url": "https://sukaya.com.au/ols/products/berry-light-soothe-serum",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/cleanser-exfoliator-mask---pink-blush",
+    "final_url": "https://sukaya.com.au/ols/products/cleanser-exfoliator-mask---pink-blush",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/rosewood-spoon",
+    "final_url": "https://sukaya.com.au/ols/products/rosewood-spoon",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/patchouli-face-cleansing-oil",
+    "final_url": "https://sukaya.com.au/ols/products/patchouli-face-cleansing-oil",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/geranium-lip-balm",
+    "final_url": "https://sukaya.com.au/ols/products/geranium-lip-balm",
+    "status": 429,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/original-body-butter",
+    "final_url": "https://sukaya.com.au/ols/products/original-body-butter",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/super-fruits-face-elixir",
+    "final_url": "https://sukaya.com.au/ols/products/super-fruits-face-elixir",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/trial-collection",
+    "final_url": "https://sukaya.com.au/ols/products/trial-collection",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/all-in-one-lavender-balm",
+    "final_url": "https://sukaya.com.au/ols/products/all-in-one-lavender-balm",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/products/body-oil",
+    "final_url": "https://sukaya.com.au/ols/products/body-oil",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/face",
+    "final_url": "https://sukaya.com.au/ols/categories/face",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/cleanser-exfoliator-mask",
+    "final_url": "https://sukaya.com.au/ols/categories/cleanser-exfoliator-mask",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/body-oils",
+    "final_url": "https://sukaya.com.au/ols/categories/body-oils",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/balms",
+    "final_url": "https://sukaya.com.au/ols/categories/balms",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/samples--minis",
+    "final_url": "https://sukaya.com.au/ols/categories/samples--minis",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/face-serums",
+    "final_url": "https://sukaya.com.au/ols/categories/face-serums",
+    "status": 429,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/body-butters",
+    "final_url": "https://sukaya.com.au/ols/categories/body-butters",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/face-cleansing-oil",
+    "final_url": "https://sukaya.com.au/ols/categories/face-cleansing-oil",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  },
+  {
+    "url": "https://sukaya.com.au/ols/categories/accessories--essentials",
+    "final_url": "https://sukaya.com.au/ols/categories/accessories--essentials",
+    "status": 404,
+    "content_type": "",
+    "redirect_history": []
+  }
+]
