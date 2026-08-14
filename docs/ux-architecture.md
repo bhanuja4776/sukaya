@@ -77,17 +77,19 @@ Every product card must show only verified fields: exact name, exact price, cate
 
 Hover interaction (desktop): subtle image scale (1.02×) + CTA fade-in, no card rotation/tilt (keeps with the "depth not spectacle" rule). Tap interaction (mobile): whole card is the tap target, no separate tiny "view" link needed.
 
-## 4. Proposal: handling the empty "Raving Fans" section
+## 4. "Raving Fans" — CLIENT/CONTENT DECISION REQUIRED
 
-The section heading is real and confirmed to exist on the live site; the content behind it is confirmed empty (no reviews exist, `data/reviews.json` is `[]`). Three options, **no testimonial content invented in any of them**:
+The section heading is real and confirmed to exist on the live site; the content behind it is confirmed empty (no reviews exist, `data/reviews.json` is `[]`).
 
-**Option A — Launch without the section (recommended for initial launch).** Omit "Raving Fans" from the rebuilt homepage until real customer reviews exist. Cleanest option; avoids shipping a visibly empty or placeholder-feeling section on a "premium" site. Downside: loses a verified heading/content slot the brand clearly intended to use.
+**PRIMARY RECOMMENDATION: do not populate this section with fabricated content.** No testimonials, review counts, star ratings, or "trust signal" copy are invented for this slot under any circumstance — including facts that are technically verified elsewhere (e.g. formulation claims), since repurposing them under a "Raving Fans"/social-proof heading would misrepresent them as customer sentiment they are not. That approach, considered in an earlier draft of this document, has been withdrawn.
 
-**Option B — Repurpose the slot for verified trust signals.** Keep a section in roughly the same position, but built entirely from facts already verified elsewhere rather than reviews — e.g. a "Why Sukaya" panel surfacing the already-verified formulation facts (0% water / 5× actives claim, essential-oil safety concentrations, the founder's aromatherapy certification). This preserves the *position* in the funtnel (Trust, per §1) using only real, sourced content.
+Two implementation options, exactly as framed for your decision:
 
-**Option C — Ship an honest empty/early state.** Keep the "Raving Fans" heading with a small, honest empty-state message (e.g. inviting future customers to be among the first to review) rather than fake content. Lowest editorial polish of the three, but keeps the section's identity intact for when real reviews arrive.
+**A. Omit the section from the redesigned homepage.** "Raving Fans" is not built/rendered until real testimonial content exists. Cleanest presentation; no visible placeholder or empty state on a premium page.
 
-**Recommendation:** Option A for initial launch, with Option B as the stronger long-term replacement if the client confirms they don't expect to collect reviews soon — but this is your call, not a decision made here.
+**B. Retain a minimal placeholder, pending authentic content.** The heading position is preserved in the layout with an honest, minimal empty-state treatment (e.g. plain heading + a short, non-promotional note that reviews are coming) — no fabricated quotes, ratings, or counts. Keeps the section's identity/slot intact for when real reviews are supplied.
+
+**This is explicitly your decision, not one made in this documentation.** Neither option is implemented, previewed, or defaulted-to until you choose — Phase 3 will build whichever you select, using only content you supply for it.
 
 ## 5. Shop (product listing) page
 
@@ -144,7 +146,45 @@ Applying the requested evaluation lens (hierarchy, contrast, whitespace, rhythm,
 - **Conversion UX:** single-CTA-per-section rule (§2.10/`design-system.md` §6.5), progressive disclosure on PDP to avoid overwhelming detail before purchase intent, breadcrumbs/search for low-friction discovery.
 - **Interaction design:** every interactive element's states (rest/hover/active/disabled/focus) defined in `design-system.md` §6, not left implicit.
 
-## 13. Remaining blockers affecting this architecture
+## 13. Conversion-focused review (Phase 2 refinement)
+
+A dedicated pass over this architecture against e-commerce conversion priorities, per your request. No new sales copy, claims, or urgency/scarcity messaging is introduced anywhere below — this section evaluates structure and interaction only.
+
+**Product discovery:**
+- Shop (§5) is reachable from the header on every page (verified nav, one click from anywhere).
+- Featured Products on the homepage (§2.5) surfaces a subset before a visitor ever reaches Shop — shortens the path to a product for a hero-driven visitor.
+- Category filtering (§5) uses only the 9 verified category names — real discovery paths, not invented ones.
+- Search (§7) covers the full 10-product catalog, not a partial or placeholder index.
+- **Adjustment:** breadcrumbs (§7) and a persistent "Back to Shop" affordance on every PDP reduce dead-ends — a visitor who lands directly on a product page (e.g. from search) always has an obvious next step.
+
+**Product visibility:**
+- Product Card (§3) shows image, name, and price with no extraneous information competing for attention — nothing buried behind an extra click to see the price.
+- Awaiting-asset products (`component-system.md` §5) remain fully visible and purchasable in the grid rather than hidden — a missing photo doesn't remove a product from discovery, it only affects its imagery.
+
+**Clear pricing:**
+- `PriceDisplay` (`component-system.md` §2) renders only verified price data, in the verified format — "From $X" stays "From $X" rather than being smoothed into a single misleading number. Where a price has an open question (Geranium Lip Balm 10ml tier), the card/PDP shows what's verified and nothing invented — a visitor is never shown a wrong price, only an honestly incomplete one until verification lands.
+
+**Strong but tasteful CTAs:**
+- One primary CTA per section (`design-system.md` §6.5) — hero "Shop Now," card "Add to Cart," PDP "Buy Now"/"Add to Cart" pairing (verified existing pattern). No stacked/competing CTAs, no invented urgency language ("only 2 left," "selling fast") anywhere — none of that is verified to be true and none is fabricated to imply it.
+
+**Low interaction friction:**
+- Inline search (§2.1) rather than a separate search results page.
+- Accordion-based ingredient/usage/safety info on mobile PDP (§6) keeps the path to "Add to Cart" short on small screens rather than forcing a long scroll past every ingredient before reaching the purchase action.
+- Newsletter capture (§2.9) is a single inline field, not a multi-step form.
+
+**Clear navigation:**
+- Nav is exactly what's verified to exist (Home, Shop) — no invented mega-menu or category flyout that would misrepresent the site's real structure.
+- Sticky header keeps Shop/cart access available while scrolling long homepage sections.
+
+**Mobile purchase flow:**
+- Per the responsive table (§10): product grid single-column, PDP image-first with accordion-collapsed detail, CTA always reachable without excessive scrolling (sticky Add to Cart bar on mobile PDP is worth considering in Phase 3 implementation, flagged here as an option, not decided).
+- Touch targets meet the 44×44px minimum (`design-system.md` §9) throughout — cart/search icons, card CTAs, form fields.
+
+**Visual trust:**
+- Real product photography (once supplied) and the verified formulation claims already in the copy (0% water, ingredient transparency, safety notes on every product) are the trust carriers — not badges, counters, or claims that aren't sourced.
+- The "Raving Fans" gap (§4) is the one place trust-building content is genuinely missing; it is being left honestly absent/minimal rather than faked, which is itself a trust-preserving choice (a fabricated testimonial discovered later would cost far more trust than an absent section).
+
+## 14. Remaining blockers affecting this architecture
 
 Carried from `docs/verification-checklist.md` — this document works around them without resolving them:
 - Product photography for 8 of 10 products (affects §2.5, §3, §6 — see Blockers list in final chat summary).

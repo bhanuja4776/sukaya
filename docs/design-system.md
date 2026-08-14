@@ -30,27 +30,30 @@ Nothing product-related, legal, or claims-based appears in this document — tha
 
 ### 2.2 Derived palette **[SYSTEM]**
 
-Built by extending the verified sage green into a full accessible palette, plus warm neutrals and one accent drawn from colors that genuinely appear in the brand's own verified product/ingredient photography (pink clay, honey, dried botanicals — visible in `docs/asset-inventory.md`'s recovered lifestyle images) rather than an arbitrary color-wheel choice.
+> **Approval note (Phase 2 refinement):** `#547D54` is the *only* verified SUKAYA brand color. Everything else in this palette is a new design-system derivation, none of it is to be described or presented anywhere (copy, client materials, code comments) as an existing SUKAYA brand color. The dominant visual balance of the site must read as **sage green / warm cream / warm sand / soft white / warm ink / restrained botanical tones** — not orange-and-green. The one non-neutral accent (`terracotta-500`) is downgraded to optional and explicitly labeled below.
 
 | Token | Hex | Usage |
 |---|---|---|
 | `sage-900` (Deep Sage) | `#2E4530` | Primary body text on light surfaces (softer than black; pairs with warm neutrals) |
-| `sage-700` (Sukaya Sage — brand primary) | `#547D54` | Primary buttons, links, active states, icon accents — **the verified brand color, unchanged** |
+| `sage-700` (Sukaya Sage — **verified brand anchor**) | `#547D54` | Primary buttons, links, active states, icon accents — **the verified brand color, unchanged** |
 | `sage-500` | `#7A9B7A` | Secondary UI accents, borders on interactive elements |
-| `sage-200` | `#D9E4D3` | Subtle tinted backgrounds (badges, hover states, section dividers) |
+| `sage-200` | `#D9E4D3` | Subtle tinted backgrounds (badges, hover states, section dividers, sale/discount indicators — see below) |
 | `sage-100` | `#EEF3EA` | Lightest tint — section background variation |
 | `cream-50` (Warm Paper) | `#FAF7F1` | Primary page background — replaces stark white |
 | `cream-0` (Card White) | `#FFFDF9` | Card/panel surfaces, slightly lifted from page background |
 | `sand-200` | `#E7E0D3` | Borders, dividers, input outlines |
 | `ink-900` (Warm Ink) | `#2B2822` | Default body text — warm near-black, not pure `#000` |
 | `ink-600` | `#5C574C` | Secondary/muted text (captions, meta info) |
-| `terracotta-500` (accent — new, sourced from real product tones) | `#B9744F` | Sparing use only: sale/discount badges (e.g. Trial Collection), warm highlight moments — never a primary CTA color |
-| `success` | `#547D54` (= sage-700) | Confirmation states (newsletter signup success, added-to-cart) — reuses brand color rather than introducing a generic green |
-| `error` | `#A6493A` (muted brick red, harmonizes with terracotta) | Form validation only — deliberately desaturated, not a harsh alert red |
+| `error` | `#A6493A` (muted, desaturated brick red) | Form validation only — a functional system color, not a visual-identity color; deliberately muted, not a harsh alert red |
+
+**Sale/discount indicator — revised.** The Trial Collection's sale state (`docs/product-inventory.md` — struck-through `$19.99` → `$15.99`) uses `sage-700` on `sage-200`, not a separate accent hue. This is also the more defensible choice on the evidence: the PDF's own grid screenshot shows the live site's "Sale" ribbon rendered in green, so a sage-based treatment is closer to the verified original than an invented orange one.
+
+**`terracotta-500` `#B9744F` — DESIGN-SYSTEM ACCENT — NOT VERIFIED BRAND COLOUR.** Downgraded per approval feedback: **optional, not used anywhere by default.** If a future editorial moment genuinely needs a single warm non-green accent (e.g. a rare pull-quote background wash), this token is available — but nothing in the current design system, component specs, or homepage architecture relies on it. It must never be labeled, described, or presented as an existing SUKAYA brand color in any client-facing material.
+**`success`** reuses `sage-700` directly (no separate token) — confirmation states (newsletter signup, added-to-cart) stay within the verified brand color rather than introducing any additional hue.
 
 **Contrast rule [SYSTEM]:** `ink-900` on `cream-50`/`cream-0` = AAA body text contrast. `sage-700` on `cream-50` meets AA for large text/UI (buttons); body-size text must use `ink-900`, not sage, for paragraphs — sage is for accents and short labels only.
 
-**What's deliberately absent:** no neon, no saturated blue/purple (nothing in the verified brand supports it), no pure black (`#000`) as a text or background color despite it appearing once in the raw CSS scan — that single low-frequency occurrence (`observed_css_colours_by_frequency` in the archive) reads as incidental utility CSS, not a brand color, so it's not being carried forward as one.
+**What's deliberately absent:** no neon, no saturated blue/purple (nothing in the verified brand supports it), no pure black (`#000`) as a text or background color despite it appearing once in the raw CSS scan — that single low-frequency occurrence (`observed_css_colours_by_frequency` in the archive) reads as incidental utility CSS, not a brand color, so it's not being carried forward as one. With `terracotta-500` now optional/unused-by-default, the shipped palette has no orange family in active use at all — the dominant visual impression is sage + warm neutrals only, addressing the "avoid orange/green heavy" note directly.
 
 ## 3. Typography
 
@@ -59,25 +62,27 @@ Built by extending the verified sage green into a full accessible palette, plus 
 - **Righteous** **[VERIFIED]** — the logo wordmark's typeface (rounded, geometric display slab), confirmed via the archive's typography scan and visible directly in the logo artwork itself.
 - **Josefin Sans** **[VERIFIED]** — confirmed body/UI typeface via the same scan.
 
-### 3.2 Usage recommendation **[SYSTEM] — flagged for sign-off**
+### 3.2 Usage decision **[APPROVED — Phase 2 refinement]**
 
-The live site currently appears to use Righteous fairly broadly (per the raw CSS scan). For the "premium editorial" direction, **recommend narrowing Righteous to brand-specific moments only** — the logo lockup and the homepage hero headline — while using Josefin Sans, at elevated scale/weight/tracking, for all other headings. Rationale: Righteous is a rounded, slightly playful display face; used sparingly it reads as "confident brand mark," used pervasively across every heading it pulls the site toward "friendly/craft blog" rather than "premium editorial." **This is a recommendation, not a decision** — it changes how an existing verified brand asset is applied, so it needs your approval before Phase 3, per the same standard as any other design choice that touches the brand's existing presentation.
+Settled per your explicit direction: **Righteous is used only for the SUKAYA logo and extremely limited brand-display moments** (the logo wordmark itself, and nowhere else by default — see `display-brand` below, which exists as a token but is not applied to the hero or any section heading). **Josefin Sans is the primary interface and editorial typeface** for navigation, all headings (including the hero H1), body copy, product information, buttons, and CTAs. This supersedes the earlier Phase 2 draft, which had proposed using Righteous for the hero headline — that proposal is withdrawn in favor of this direction. No third typeface is introduced.
 
 ### 3.3 Type scale **[SYSTEM]**
 
-Fluid scale (`clamp()`-based in implementation), ratio ≈1.25, base 16px:
+Fluid scale (`clamp()`-based in implementation), ratio ≈1.25, base 16px. **All sizes below are Josefin Sans except `display-brand`:**
 
 | Token | Size (desktop) | Size (mobile) | Weight | Face | Usage |
 |---|---|---|---|---|---|
-| `display-hero` | 56–72px | 34–40px | 400 | Righteous | Hero H1 only |
-| `display-brand` | 28–32px | 22–24px | 400 | Righteous | Logo wordmark, standalone brand moments |
+| `display-brand` | 28–32px | 22–24px | 400 | **Righteous** | Logo wordmark only — not reused as a general heading style |
+| `display-hero` | 52–68px | 32–38px | 500 | Josefin Sans, tight tracking | Hero H1 — elevated scale/weight is how "premium editorial" is achieved here, not a different typeface |
 | `heading-1` | 40px | 28px | 500 | Josefin Sans, +2% tracking | Section titles ("About Sukaya," "Featured Products") |
 | `heading-2` | 28px | 22px | 500 | Josefin Sans | Sub-section titles ("Our Philosophy," product names on PDP) |
 | `heading-3` | 20px | 18px | 600 | Josefin Sans | Card titles, product-card names |
 | `body-lg` | 18px | 17px | 400 | Josefin Sans | Intro paragraphs, hero subheadline |
 | `body` | 16px | 16px | 400 | Josefin Sans | Default body copy, ingredient lists |
 | `body-sm` | 14px | 14px | 400 | Josefin Sans | Captions, safety notes, meta text |
-| `label` | 13px | 13px | 500, uppercase, +6% tracking | Josefin Sans | Buttons, badges, nav items |
+| `label` | 13px | 13px | 500, uppercase, +6% tracking | Josefin Sans | Buttons, badges, nav items, CTAs |
+
+**Where Righteous may still appear**, strictly interpreting "extremely limited brand-display moments": the header logo lockup, the footer's small brand signature (if the logo mark is repeated there), and a favicon/social-share brand mark if one is produced later. It does not appear in the hero, section headings, product names, buttons, or any UI chrome.
 
 **Line-height:** 1.15 for display/headings, 1.6 for body copy (editorial reading comfort). **Line length:** body text columns capped at ~65–75 characters (see container widths, §4) — this is why the source homepage's paragraph blocks (Philosophy, Commitment) should render in a constrained text column, not full-bleed.
 
@@ -150,13 +155,14 @@ Structure is Home + Shop only (verified, `docs/source-of-truth.md` §A.4) — th
 ### 6.5 CTA patterns **[SYSTEM]**
 One primary CTA visible per viewport section maximum (avoid competing calls-to-action — a direct application of the conversion funnel in `docs/ux-architecture.md`). Product-card CTA is "Add to Cart" (icon + label on hover, icon-only at rest on desktop to keep the image dominant); PDP CTA is the full Buy Now/Add to Cart pairing matching the verified existing product-page pattern.
 
-## 7. Depth & dimensionality principles **[SYSTEM]**
+## 7. Depth & dimensionality principles **[SYSTEM, reaffirmed — Phase 2 refinement]**
 
-Full detail in `docs/motion-system.md` §"3D / Depth System" — summarized here as it's a design-system-level rule, not just a motion detail:
+**Governing rule, unchanged and explicitly reaffirmed on approval: 3D = depth, not spectacle.** Full detail in `docs/motion-system.md` §"3D / Depth System" — summarized here as it's a design-system-level rule, not just a motion detail:
 
-- Depth comes from **layout layering** (image bleeding past a section boundary, offset text/image pairings) and **soft shadow elevation**, not from 3D transforms, tilt effects, or literal 3D objects.
+- Depth comes from **layout layering** (image bleeding past a section boundary, offset text/image pairings), **soft shadow elevation**, **controlled scale**, and **subtle parallax/background movement** — not from 3D transforms, tilt effects, or literal 3D objects.
 - Parallax, where used, is limited to a single background layer moving slower than foreground content on scroll — subtle enough that a user feels "this section has depth" without consciously noticing motion.
 - No product ever rotates, floats independently, or gets a drop-shadow/glow treatment that reads as "3D render." Real photography stays photographic.
+- **Explicitly out of scope unless a later, separate explicit requirement justifies them:** Three.js, WebGL, rotating products, product tilt effects, particle systems, excessive perspective, floating objects, flashy lighting. None of these are planned, budgeted for, or hinted at anywhere in this system.
 
 ## 8. Responsive breakpoints **[SYSTEM]**
 

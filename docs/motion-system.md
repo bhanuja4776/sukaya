@@ -101,7 +101,7 @@ Per the brief's explicit exclusions, none of the following appear anywhere in th
 
 ## 5. 3D / Depth system
 
-The brief asks for depth "as craftsmanship," not spectacle. This is achieved entirely through the patterns above plus static layout technique — no 3D library, no WebGL, no CSS 3D transforms/perspective beyond what's implicit in `parallax-layer`:
+**Reaffirmed on Phase 2 approval, unchanged: 3D = depth, not spectacle.** The brief asks for depth "as craftsmanship," not spectacle. This is achieved entirely through the patterns above plus static layout technique — no 3D library, no WebGL, no CSS 3D transforms/perspective beyond what's implicit in `parallax-layer`. Explicitly excluded unless a later, separate explicit requirement justifies otherwise: **Three.js, WebGL, rotating products, product tilt effects, particle systems, excessive perspective, floating objects, flashy lighting.**
 
 1. **Layered composition (static):** images allowed to overlap section boundaries (e.g. a product photo bleeding slightly into the whitespace of the next section) — a layout/z-index technique, zero motion required.
 2. **Elevation via shadow (static):** the `shadow-rest` → `shadow-hover` → `shadow-float` scale (`design-system.md` §4.4) is the primary "this sits above the page" cue — warm, soft, low-opacity, never a hard drop-shadow.
