@@ -5,9 +5,9 @@ import { footer } from "@/content/site";
 
 /**
  * Footer — verified copyright line only (docs/source-of-truth.md §B).
- * Privacy Policy / Terms and Conditions link to routes not built in this
- * phase (Phase 3B is homepage-only) — they will 404 until a later phase
- * builds those pages; not fabricating placeholder legal pages here.
+ * Privacy Policy / Terms and Conditions link to app/privacy-policy and
+ * app/terms-and-conditions (Phase 5), which preserve the live site's
+ * actual "coming soon" state verbatim.
  */
 export function Footer() {
   return (
