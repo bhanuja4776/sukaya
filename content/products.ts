@@ -32,6 +32,11 @@ export interface ProductPrice {
   saleLabel?: string;
 }
 
+export interface SizeVariant {
+  label: string;
+  price: VerifiedOr<ProductPrice>;
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -40,6 +45,14 @@ export interface Product {
   size: VerifiedOr<string>;
   /** Verified fragrance/size variant names, where the product has them. */
   variants?: string[];
+  /**
+   * Size options with their own price per option (Geranium Lip Balm: 5 ML
+   * verified at $5.99, 10 ML price NEEDS_VERIFICATION —
+   * docs/verification-checklist.md item 4). Lets the PDP render a real
+   * size selector and honestly show "pending verification" for the
+   * unresolved option instead of a fabricated price.
+   */
+  sizeVariants?: SizeVariant[];
   /** Path under /public/images/products, or null — see content/assets.ts. */
   image: string | null;
   /** Pointer to the verbatim long-form copy, not duplicated here. */
@@ -133,6 +146,10 @@ export const products: Product[] = [
     category: "Accessories & Essentials",
     price: { display: "From $5.99", amount: 5.99 },
     size: "Tube 5 ml / Tin 10 ml",
+    sizeVariants: [
+      { label: "5 ML", price: { display: "$5.99", amount: 5.99 } },
+      { label: "10 ML", price: NEEDS_VERIFICATION },
+    ],
     image: "/images/products/geranium-lip-balm.jpg",
     sourceRef: "docs/content-inventory.md §2.9",
   },
