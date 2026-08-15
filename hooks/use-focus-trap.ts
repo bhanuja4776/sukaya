@@ -2,13 +2,21 @@
 
 import { useEffect, type RefObject } from "react";
 
+// The trailing `:not([disabled])` on the `[tabindex]` clause matters:
+// Motion's `motion.button` (components/ui/button.tsx) renders
+// `tabindex="0"` even on a disabled button, so without this exclusion the
+// generic `[tabindex]` clause would still treat a disabled Button as
+// focusable. Found in Phase 6 (docs/phase-6-commerce-layer-report.md §7)
+// when the Cart Drawer's disabled Checkout button broke Tab-wrapping —
+// the first time a disabled Motion Button existed inside a focus-trapped
+// dialog.
 const FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])';
 
 /**
- * Minimal, dependency-free focus trap for the mobile nav drawer
- * (docs/component-system.md §4, candidate #1 — hand-rolled since the
- * 21st.dev MCP server is unavailable this session and no replacement
+ * Minimal, dependency-free focus trap for the mobile nav drawer and Cart
+ * Drawer (docs/component-system.md §4, candidate #1 — hand-rolled since
+ * the 21st.dev MCP server is unavailable this session and no replacement
  * dialog/UI library is being installed for it).
  *
  * While `active`, Tab/Shift+Tab cycle within `containerRef`, Escape calls

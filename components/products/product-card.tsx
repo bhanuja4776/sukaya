@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { AwaitingAssetPlaceholder } from "@/components/ui/awaiting-asset-placeholder";
+import { ProductCardCta } from "@/components/commerce/product-card-cta";
 import type { Product } from "@/content/products";
 
 /**
@@ -9,12 +10,11 @@ import type { Product } from "@/content/products";
  * (docs/product-inventory.md): name, exact price string, category,
  * CTA. No rating/badge/urgency copy is invented.
  *
- * Now links to its product detail page (Phase 4 built /shop/[slug] —
- * Phase 3B deliberately left this as a non-link since PDPs didn't exist
- * yet). "Add to Cart" stays a properly `disabled` button — cart/checkout
- * is still out of scope — kept as a sibling of the link rather than
- * nested inside it (an `<a>` wrapping a `<button>` is invalid/inaccessible
- * nesting).
+ * Links to its product detail page (Phase 4 built /shop/[slug]). The CTA
+ * (`ProductCardCta`, Phase 6) is a separate client component kept as a
+ * sibling of the link rather than nested inside it (an `<a>` wrapping a
+ * `<button>` is invalid/inaccessible nesting) — extracting just the CTA
+ * lets this card stay a Server Component.
  *
  * Hover (`product-hover`, docs/motion-system.md §3.4) is implemented in
  * plain CSS via `group`/`group-hover`, not Framer Motion — this keeps the
@@ -70,14 +70,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
       </Link>
       <div className="px-4 pb-4">
-        <button
-          type="button"
-          disabled
-          aria-label={`Add ${product.name} to cart — coming soon`}
-          className="mt-3 inline-flex cursor-not-allowed text-label uppercase tracking-wide text-ink-600"
-        >
-          Add to Cart
-        </button>
+        <ProductCardCta product={product} />
       </div>
     </div>
   );

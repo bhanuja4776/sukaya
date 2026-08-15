@@ -9,8 +9,12 @@ import { Badge } from "@/components/ui/badge";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Accordion, type AccordionItemData } from "@/components/ui/accordion";
 import { AwaitingAssetPlaceholder } from "@/components/ui/awaiting-asset-placeholder";
+import { QuantityStepper } from "@/components/ui/quantity-stepper";
 import { ImageReveal } from "@/components/motion/image-reveal";
 import { FadeUp } from "@/components/motion/fade-up";
+import { useCart } from "@/components/commerce/cart-context";
+import { getPurchaseState } from "@/lib/commerce/purchasability";
+import { CHECKOUT_UNAVAILABLE_MESSAGE } from "@/lib/commerce/messages";
 import type { Product } from "@/content/products";
 import { NEEDS_VERIFICATION } from "@/content/products";
 import type { ProductDetail, ProductDetailEntry } from "@/content/product-details";
@@ -22,6 +26,13 @@ import { cn } from "@/lib/utils";
  * or missing long-form content slots in cleanly without redesigning this
  * component: every optional field is checked and simply omitted from the
  * render when absent, rather than the layout assuming it's always there.
+ *
+ * Purchase actions (Phase 6, docs/phase-6-commerce-layer-report.md §4/§5):
+ * "Add to Cart" is real — it adds to the local cart architecture via
+ * `useCart()` — but only once `getPurchaseState` confirms the selected
+ * size/variant has verified price and size data. "Buy Now" always stays
+ * honestly disabled: it implies going straight to checkout, and no
+ * checkout backend is connected (docs/commerce-investigation.md).
  */
 export function ProductDetailView({
   product,
@@ -33,6 +44,8 @@ export function ProductDetailView({
   const [variantIndex, setVariantIndex] = useState(0);
   const [sizeIndex, setSizeIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
+  const { addItem } = useCart();
 
   const hasVariants = !!detailEntry?.variantDetails?.length;
   const activeDetail: ProductDetail | undefined = hasVariants
@@ -41,6 +54,19 @@ export function ProductDetailView({
 
   const activeSizeVariant = product.sizeVariants?.[sizeIndex];
   const displayPrice = activeSizeVariant ? activeSizeVariant.price : product.price;
+  const activeVariantName = hasVariants
+    ? detailEntry!.variantDetails![variantIndex].variantName
+    : undefined;
+  const purchaseState = getPurchaseState(product, activeSizeVariant?.label);
+
+  async function handleAddToCart() {
+    await addItem(
+      { slug: product.slug, variantName: activeVariantName, sizeLabel: activeSizeVariant?.label },
+      quantity,
+    );
+    setJustAdded(true);
+    window.setTimeout(() => setJustAdded(false), 1500);
+  }
 
   return (
     <Container width="wide" className="py-10 desktop:py-16">
@@ -139,48 +165,42 @@ export function ProductDetailView({
           {/* Quantity */}
           <div className="mt-6">
             <span className="text-label uppercase tracking-wide text-ink-600">Quantity</span>
-            <div className="mt-2 inline-flex items-center rounded-pill border border-sand-200">
-              <button
-                type="button"
-                onClick={() => setQuantity((value) => Math.max(1, value - 1))}
-                aria-label="Decrease quantity"
-                className="flex h-11 w-11 items-center justify-center text-ink-900 hover:bg-sage-100"
-              >
-                –
-              </button>
-              <span aria-live="polite" className="min-w-8 text-center text-body text-ink-900">
-                {quantity}
-              </span>
-              <button
-                type="button"
-                onClick={() => setQuantity((value) => value + 1)}
-                aria-label="Increase quantity"
-                className="flex h-11 w-11 items-center justify-center text-ink-900 hover:bg-sage-100"
-              >
-                +
-              </button>
+            <div className="mt-2">
+              <QuantityStepper value={quantity} onChange={setQuantity} label={product.name} />
             </div>
           </div>
 
-          {/* Purchase actions — disabled, honest: no checkout built yet */}
+          {/* Purchase actions */}
           <div className="mt-6 flex flex-wrap gap-3">
             <Button
               type="button"
               variant="primary"
-              disabled
-              aria-label={`Buy ${product.name} now — coming soon`}
+              disabled={purchaseState.status === "pending"}
+              onClick={handleAddToCart}
+              aria-label={
+                purchaseState.status === "pending"
+                  ? `Add ${product.name} to cart — ${purchaseState.reason}`
+                  : `Add ${product.name} to cart`
+              }
             >
-              Buy Now
+              {justAdded ? "Added ✓" : "Add to Cart"}
             </Button>
             <Button
               type="button"
               variant="secondary"
               disabled
-              aria-label={`Add ${product.name} to cart — coming soon`}
+              aria-label={`Buy ${product.name} now — checkout not yet available`}
             >
-              Add to Cart
+              Buy Now
             </Button>
           </div>
+
+          {purchaseState.status === "pending" && (
+            <p className="mt-2 text-body-sm text-ink-600">
+              {purchaseState.reason} — not yet available to add to cart.
+            </p>
+          )}
+          <p className="mt-1 text-body-sm text-ink-600">{CHECKOUT_UNAVAILABLE_MESSAGE}</p>
 
           {/* Tagline + description */}
           {activeDetail?.tagline && (

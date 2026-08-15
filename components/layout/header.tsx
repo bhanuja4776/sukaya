@@ -10,14 +10,16 @@ import { brandAssets } from "@/content/assets";
 import { brand } from "@/content/site";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
 import { MobileNavDrawer } from "@/components/layout/mobile-nav-drawer";
+import { CartTrigger } from "@/components/commerce/cart-trigger";
 
 /**
  * docs/ux-architecture.md §2.1 — sticky header, transparent-over-hero
  * transitioning to a solid bar on scroll (docs/motion-system.md §3.6
  * `nav-transition`). Nav is exactly Home + Shop (verified,
- * docs/source-of-truth.md §A.4) — no cart/search controls, since those
- * are commerce/shop-page functionality out of scope for this homepage-only
- * phase (see docs/phase-3b-homepage-report.md).
+ * docs/source-of-truth.md §A.4) — no search control, since nothing in the
+ * source material evidences one. The cart trigger (Phase 6,
+ * docs/phase-6-commerce-layer-report.md) is commerce architecture, not a
+ * nav item, so it sits outside `navItems`.
  */
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -70,27 +72,31 @@ export function Header() {
             </ul>
           </nav>
 
-          <button
-            ref={menuButtonRef}
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-nav-drawer"
-            onClick={() => setMenuOpen(true)}
-            className="rounded-md p-2 text-ink-900 hover:bg-sage-100 tablet:hidden"
-          >
-            <VisuallyHidden>Open menu</VisuallyHidden>
-            <svg
-              aria-hidden="true"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
+          <div className="flex items-center gap-1">
+            <CartTrigger />
+
+            <button
+              ref={menuButtonRef}
+              type="button"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav-drawer"
+              onClick={() => setMenuOpen(true)}
+              className="rounded-md p-2 text-ink-900 hover:bg-sage-100 tablet:hidden"
             >
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-          </button>
+              <VisuallyHidden>Open menu</VisuallyHidden>
+              <svg
+                aria-hidden="true"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+          </div>
         </div>
       </Container>
 

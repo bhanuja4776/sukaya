@@ -5,6 +5,8 @@ import { SkipLink } from "@/components/ui/skip-link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CookieBanner } from "@/components/ui/cookie-banner";
+import { CartProvider } from "@/components/commerce/cart-context";
+import { CartDrawer } from "@/components/commerce/cart-drawer";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -26,13 +28,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           fallback in styles/globals.css for non-Motion transitions.
         */}
         <MotionConfig reducedMotion="user">
-          <SkipLink />
-          <Header />
-          <main id="main-content" className="flex flex-1 flex-col">
-            {children}
-          </main>
-          <Footer />
-          <CookieBanner />
+          <CartProvider>
+            <SkipLink />
+            <Header />
+            <main id="main-content" className="flex flex-1 flex-col">
+              {children}
+            </main>
+            <Footer />
+            <CookieBanner />
+            <CartDrawer />
+          </CartProvider>
         </MotionConfig>
       </body>
     </html>
