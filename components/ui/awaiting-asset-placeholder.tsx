@@ -42,7 +42,12 @@ export function AwaitingAssetPlaceholder({
         {/* Single-stroke leaf glyph — decorative only, not a product likeness. */}
         <path d="M12 21c-4.5-1-8-4.8-8-10 5 0 9 3 9 8 0-6 4-9 8-9-.5 6-4 10-9 11Z" />
       </svg>
-      <p className="text-body-sm text-ink-600">Product photography coming soon</p>
+      {/* Label-style treatment (matches Badge/CTA typography elsewhere) rather
+          than default body text — Phase 9, reads as an intentional design
+          moment instead of a leftover system message. */}
+      <p className="text-label uppercase tracking-wide text-ink-600">
+        Product photography coming soon
+      </p>
     </div>
   );
 }

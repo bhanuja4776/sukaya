@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { MotionConfig } from "motion/react";
-import { josefinSans, righteous } from "@/lib/fonts";
+import { josefinSans } from "@/lib/fonts";
 import { SkipLink } from "@/components/ui/skip-link";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -16,10 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${josefinSans.variable} ${righteous.variable} h-full`}
-    >
+    <html lang="en" className={`${josefinSans.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         {/*
           Framer Motion's own reduced-motion handling — respects the OS-level

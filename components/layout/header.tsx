@@ -53,7 +53,13 @@ export function Header() {
               width={brandAssets.logo.width}
               height={brandAssets.logo.height}
               priority
-              className="h-10 w-auto"
+              // The source photo has a plain white backdrop, which reads as
+              // a hard-edged card against the cream page background —
+              // mix-blend-multiply optically drops the white out against
+              // any cream/light surface without altering the image file
+              // itself (Phase 9 visual polish, docs/phase-9-visual-
+              // conversion-audit.md §3).
+              className="h-10 w-auto mix-blend-multiply"
             />
           </Link>
 

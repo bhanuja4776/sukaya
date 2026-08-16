@@ -39,15 +39,15 @@
 
   /* Typography — docs/design-system.md §3 */
   --font-sans: var(--font-josefin), ui-sans-serif, system-ui, sans-serif;
-  --font-brand: var(--font-righteous), ui-sans-serif, system-ui, sans-serif;
 
   /*
    * Type scale — docs/design-system.md §3.3. Fluid (clamp-based) per the
    * docs' "Fluid scale" note, bounded at the documented mobile/desktop
-   * sizes. All Josefin Sans except --text-display-brand (Righteous, logo
-   * wordmark only — docs/design-system.md §3.2/§3.3 approval decision).
+   * sizes. All Josefin Sans. (A `display-brand`/Righteous token existed
+   * here for the logo wordmark but was removed in Phase 9 — it had zero
+   * usages anywhere, since the wordmark is only ever the existing
+   * photographed logo image, never live text. See lib/fonts.ts.)
    */
-  --text-display-brand: clamp(1.375rem, 1.2rem + 0.8vw, 2rem); /* 22–32px, logo only */
   --text-display-hero: clamp(2rem, 1.2rem + 4vw, 4.25rem); /* 32–68px */
   --text-display-hero--line-height: 1.15;
   --text-heading-1: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem); /* 28–40px */
