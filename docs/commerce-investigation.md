@@ -2,6 +2,8 @@
 
 **Status: Investigation only. No cart, checkout, or payment functionality is implemented in this phase. No payment provider is selected. No product content or imagery was touched.**
 
+**Update (Phase 7):** items 1 (Cart) and 5 (Checkout) below were marked NEEDS CLIENT VERIFICATION here because the archive crawler couldn't reach either. They are now VERIFIED by direct, client-supplied live-site evidence — see `docs/phase-7-godaddy-integration-investigation.md` §1. This file is left as-is otherwise, as the historical record of what Phase 5 established from the archive/PDF alone; the payment-processor identity (item 6) and cart-sync/product-URL questions remain open exactly as described in the Phase 7 document.
+
 This document uses **only** material already collected in this project — `docs/content-inventory.md` (client-supplied PDF transcription), `docs/source-of-truth.md` (Phase 1.6 archive reconciliation), and `reference/sukaya-site-archive/` (the preserved live-site crawl) — plus `content/site.ts`/`content/products.ts` as already built. No new inference, guessing, or external browsing was performed. Every item below is marked **VERIFIED** (directly evidenced in the source material) or **NEEDS CLIENT VERIFICATION** (not evidenced, or only partially evidenced).
 
 ---
