@@ -72,3 +72,18 @@ export function getUnitPrice(
   }
   return product.price;
 }
+
+/**
+ * Looser than `getPurchaseState` — used only by the Phase 8 GoDaddy handoff
+ * CTA (docs/phase-8-godaddy-product-handoff.md), which links to a page
+ * GoDaddy itself renders. An unverified `size` doesn't block the handoff
+ * there, because the customer sees GoDaddy's own correct size on that page
+ * (this is why Body Oil, whose `size` is NEEDS_VERIFICATION, can still get
+ * a working handoff link). An unverified *price* still blocks it, exactly
+ * like `getPurchaseState` — this project has never implied a price it
+ * hasn't verified, and an enabled link is exactly that kind of implication
+ * (this is why Geranium Lip Balm's 10 ML stays blocked).
+ */
+export function isPriceVerifiedForHandoff(product: Product, sizeLabel?: string): boolean {
+  return getUnitPrice(product, sizeLabel) !== NEEDS_VERIFICATION;
+}

@@ -13,8 +13,9 @@ import { QuantityStepper } from "@/components/ui/quantity-stepper";
 import { ImageReveal } from "@/components/motion/image-reveal";
 import { FadeUp } from "@/components/motion/fade-up";
 import { useCart } from "@/components/commerce/cart-context";
-import { getPurchaseState } from "@/lib/commerce/purchasability";
+import { getPurchaseState, isPriceVerifiedForHandoff } from "@/lib/commerce/purchasability";
 import { CHECKOUT_UNAVAILABLE_MESSAGE } from "@/lib/commerce/messages";
+import { hasCommerceMapping, getCommerceUrl } from "@/content/product-commerce";
 import type { Product } from "@/content/products";
 import { NEEDS_VERIFICATION } from "@/content/products";
 import type { ProductDetail, ProductDetailEntry } from "@/content/product-details";
@@ -27,12 +28,22 @@ import { cn } from "@/lib/utils";
  * component: every optional field is checked and simply omitted from the
  * render when absent, rather than the layout assuming it's always there.
  *
- * Purchase actions (Phase 6, docs/phase-6-commerce-layer-report.md §4/§5):
- * "Add to Cart" is real — it adds to the local cart architecture via
- * `useCart()` — but only once `getPurchaseState` confirms the selected
- * size/variant has verified price and size data. "Buy Now" always stays
- * honestly disabled: it implies going straight to checkout, and no
- * checkout backend is connected (docs/commerce-investigation.md).
+ * Purchase actions:
+ * - **Handoff mode** (Phase 8, docs/phase-8-godaddy-product-handoff.md) —
+ *   products with a verified GoDaddy commerce URL (`content/product-
+ *   commerce.ts`: Body Oils, Body Butters, Geranium Lip Balm) show a single
+ *   "Continue to Shop" action that is a real external link to that verified
+ *   URL, gated only on price being verified for the selected configuration
+ *   (`isPriceVerifiedForHandoff`) — not on the local-cart `getPurchaseState`
+ *   rule, since size is display-only here (GoDaddy's own page shows the
+ *   real one). Local "Add to Cart"/"Buy Now" don't appear for these
+ *   products — mixing a local cart with an external purchase link risked
+ *   implying the two are connected, which they are not.
+ * - **Local-cart mode** (Phase 6, docs/phase-6-commerce-layer-report.md
+ *   §4/§5) — everything else. "Add to Cart" adds to the local cart
+ *   architecture via `useCart()`, gated on `getPurchaseState` (price AND
+ *   size verified). "Buy Now" stays honestly disabled: no checkout backend
+ *   is connected for these (docs/commerce-investigation.md).
  */
 export function ProductDetailView({
   product,
@@ -58,6 +69,15 @@ export function ProductDetailView({
     ? detailEntry!.variantDetails![variantIndex].variantName
     : undefined;
   const purchaseState = getPurchaseState(product, activeSizeVariant?.label);
+
+  const inHandoffMode = hasCommerceMapping(product.slug);
+  const commerceUrl = inHandoffMode
+    ? getCommerceUrl(product.slug, { variantName: activeVariantName, sizeLabel: activeSizeVariant?.label })
+    : null;
+  const handoffEnabled = commerceUrl !== null && isPriceVerifiedForHandoff(product, activeSizeVariant?.label);
+  const handoffSelectionLabel = [product.name, activeVariantName ?? activeSizeVariant?.label]
+    .filter(Boolean)
+    .join(" — ");
 
   async function handleAddToCart() {
     await addItem(
@@ -162,45 +182,81 @@ export function ProductDetailView({
             </div>
           )}
 
-          {/* Quantity */}
-          <div className="mt-6">
-            <span className="text-label uppercase tracking-wide text-ink-600">Quantity</span>
-            <div className="mt-2">
-              <QuantityStepper value={quantity} onChange={setQuantity} label={product.name} />
+          {/* Quantity — only meaningful for the local cart; the GoDaddy
+              handoff doesn't carry a quantity across (docs/phase-7-godaddy-
+              integration-investigation.md §9), so it's omitted in handoff
+              mode rather than shown non-functionally. */}
+          {!inHandoffMode && (
+            <div className="mt-6">
+              <span className="text-label uppercase tracking-wide text-ink-600">Quantity</span>
+              <div className="mt-2">
+                <QuantityStepper value={quantity} onChange={setQuantity} label={product.name} />
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Purchase actions */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button
-              type="button"
-              variant="primary"
-              disabled={purchaseState.status === "pending"}
-              onClick={handleAddToCart}
-              aria-label={
-                purchaseState.status === "pending"
-                  ? `Add ${product.name} to cart — ${purchaseState.reason}`
-                  : `Add ${product.name} to cart`
-              }
-            >
-              {justAdded ? "Added ✓" : "Add to Cart"}
-            </Button>
-            <Button
-              type="button"
-              variant="secondary"
-              disabled
-              aria-label={`Buy ${product.name} now — checkout not yet available`}
-            >
-              Buy Now
-            </Button>
-          </div>
+          {inHandoffMode ? (
+            <div className="mt-6">
+              {handoffEnabled ? (
+                <Button
+                  variant="primary"
+                  href={commerceUrl!}
+                  rel="noopener noreferrer"
+                  aria-label={`Continue to shop to purchase ${handoffSelectionLabel} — opens our shop`}
+                >
+                  Continue to Shop
+                </Button>
+              ) : (
+                <Button
+                  type="button"
+                  variant="primary"
+                  disabled
+                  aria-label={`Continue to shop for ${handoffSelectionLabel} — not yet available`}
+                >
+                  Continue to Shop
+                </Button>
+              )}
+              <p className="mt-2 text-body-sm text-ink-600">
+                {handoffEnabled
+                  ? "You'll complete your purchase on our shop."
+                  : "This option isn't available to purchase yet."}
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Button
+                  type="button"
+                  variant="primary"
+                  disabled={purchaseState.status === "pending"}
+                  onClick={handleAddToCart}
+                  aria-label={
+                    purchaseState.status === "pending"
+                      ? `Add ${product.name} to cart — ${purchaseState.reason}`
+                      : `Add ${product.name} to cart`
+                  }
+                >
+                  {justAdded ? "Added ✓" : "Add to Cart"}
+                </Button>
+                <Button
+                  type="button"
+                  variant="secondary"
+                  disabled
+                  aria-label={`Buy ${product.name} now — checkout not yet available`}
+                >
+                  Buy Now
+                </Button>
+              </div>
 
-          {purchaseState.status === "pending" && (
-            <p className="mt-2 text-body-sm text-ink-600">
-              {purchaseState.reason} — not yet available to add to cart.
-            </p>
+              {purchaseState.status === "pending" && (
+                <p className="mt-2 text-body-sm text-ink-600">
+                  {purchaseState.reason} — not yet available to add to cart.
+                </p>
+              )}
+              <p className="mt-1 text-body-sm text-ink-600">{CHECKOUT_UNAVAILABLE_MESSAGE}</p>
+            </>
           )}
-          <p className="mt-1 text-body-sm text-ink-600">{CHECKOUT_UNAVAILABLE_MESSAGE}</p>
 
           {/* Tagline + description */}
           {activeDetail?.tagline && (
