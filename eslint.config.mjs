@@ -16,6 +16,10 @@ const eslintConfig = defineConfig([
     // (docs/sukaya-content.pdf, reference/sukaya-site-archive/).
     "docs/**",
     "reference/**",
+    // Third-party Claude Code skill bundle (nextlevelbuilder/ui-ux-pro-max-
+    // skill), installed verbatim — its scripts follow their own upstream
+    // conventions (e.g. CommonJS require()), not this project's lint rules.
+    ".claude/**",
   ]),
 ]);
 
