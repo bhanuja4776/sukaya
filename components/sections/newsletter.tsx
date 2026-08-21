@@ -50,6 +50,7 @@ export function Newsletter() {
             <input
               id={fieldId}
               type="email"
+              autoComplete="email"
               required
               value={email}
               onChange={(event) => {

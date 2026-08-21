@@ -19,6 +19,7 @@ import { hasCommerceMapping, getCommerceUrl } from "@/content/product-commerce";
 import type { Product } from "@/content/products";
 import { NEEDS_VERIFICATION } from "@/content/products";
 import type { ProductDetail, ProductDetailEntry } from "@/content/product-details";
+import { ingredientSlugFromName } from "@/content/ingredients";
 import { cn } from "@/lib/utils";
 
 /**
@@ -118,10 +119,16 @@ export function ProductDetailView({
           </ImageReveal>
         </div>
 
-        {/* Purchase + info column */}
+        {/* Purchase + info column — the purchase-critical block (name through
+            CTA) stays sticky as the longer editorial content below it
+            scrolls, mirroring the sticky image opposite it. */}
         <FadeUp className="desktop:w-1/2">
+        <div className="desktop:sticky desktop:top-28">
           <Badge variant="neutral">{product.category}</Badge>
           <h1 className="mt-3 text-heading-1 text-ink-900">{product.name}</h1>
+          {activeDetail?.tagline && (
+            <p className="mt-2 text-heading-3 text-sage-700">{activeDetail.tagline}</p>
+          )}
 
           {displayPrice === NEEDS_VERIFICATION ? (
             <p className="mt-2 text-body-lg text-ink-600">Price pending verification</p>
@@ -257,13 +264,12 @@ export function ProductDetailView({
               <p className="mt-1 text-body-sm text-ink-600">{CHECKOUT_UNAVAILABLE_MESSAGE}</p>
             </>
           )}
+        </div>
 
-          {/* Tagline + description */}
-          {activeDetail?.tagline && (
-            <p className="mt-8 text-heading-3 text-sage-700">{activeDetail.tagline}</p>
-          )}
+        <div className="mt-10 border-t border-sand-200 pt-8 desktop:mt-8">
+          {/* Description */}
           {activeDetail?.description && (
-            <p className="mt-3 text-body text-ink-600">{activeDetail.description}</p>
+            <p className="text-body text-ink-600">{activeDetail.description}</p>
           )}
 
           {activeDetail?.benefits && activeDetail.benefits.length > 0 && (
@@ -303,6 +309,7 @@ export function ProductDetailView({
           {detailEntry?.bundleContents && (
             <BundleContents note={detailEntry.bundleNote} items={detailEntry.bundleContents} />
           )}
+        </div>
         </FadeUp>
       </div>
     </Container>
@@ -319,7 +326,13 @@ function DetailAccordion({ detail }: { detail: ProductDetail }) {
         <ul className="space-y-2">
           {detail.ingredients.map((ingredient) => (
             <li key={ingredient.name}>
-              <span className="font-medium text-ink-900">{ingredient.name}</span> – {ingredient.benefit}
+              <Link
+                href={`/ingredients/${ingredientSlugFromName(ingredient.name)}`}
+                className="font-medium text-ink-900 underline decoration-sand-200 underline-offset-2 hover:text-sage-700 hover:decoration-sage-700"
+              >
+                {ingredient.name}
+              </Link>{" "}
+              – {ingredient.benefit}
             </li>
           ))}
         </ul>

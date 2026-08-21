@@ -3,6 +3,7 @@ import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { ImageReveal } from "@/components/motion/image-reveal";
 import { FadeUp } from "@/components/motion/fade-up";
+import { ParallaxLayer } from "@/components/motion/parallax-layer";
 import { hero } from "@/content/site";
 import { lifestyleAssets } from "@/content/assets";
 
@@ -16,11 +17,17 @@ import { lifestyleAssets } from "@/content/assets";
  * per instructions. In its place this uses the verified, unflagged
  * "Our Philosophy" lifestyle photo (docs/asset-inventory.md §1) as the
  * hero's visual — an authentic recovered asset, not a fabricated one.
+ *
+ * The faint background echo of the aromatherapy oil-bottle photo is this
+ * site's one `parallax-layer` instance (docs/motion-system.md §3.5) — a
+ * real, already-used asset at low opacity, never the sharp foreground
+ * image, per the pattern's own "background layer only" rule.
  */
 export function Hero() {
   return (
-    <section className="pt-8 pb-16 tablet:pt-12 desktop:pt-16 desktop:pb-24">
-      <Container width="wide">
+    <section className="relative overflow-hidden pt-8 pb-16 tablet:pt-12 desktop:pt-16 desktop:pb-24">
+      <ParallaxLayer asset={lifestyleAssets.aromatherapyOilBottle} className="opacity-[0.06] blur-md" />
+      <Container width="wide" className="relative">
         <div className="flex flex-col gap-10 desktop:flex-row desktop:items-center desktop:gap-16">
           <ImageReveal className="order-1 overflow-hidden rounded-lg shadow-float desktop:order-2 desktop:w-1/2">
             <Image

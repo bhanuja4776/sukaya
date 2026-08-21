@@ -15,7 +15,7 @@ export function Footer() {
       <Container width="wide">
         <div className="flex flex-col gap-6 tablet:flex-row tablet:items-center tablet:justify-between">
           <nav aria-label="Footer">
-            <ul className="flex gap-6 text-body-sm text-ink-600">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-ink-600">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="hover:text-sage-700">

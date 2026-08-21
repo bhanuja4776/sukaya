@@ -15,11 +15,14 @@ import { CartTrigger } from "@/components/commerce/cart-trigger";
 /**
  * docs/ux-architecture.md §2.1 — sticky header, transparent-over-hero
  * transitioning to a solid bar on scroll (docs/motion-system.md §3.6
- * `nav-transition`). Nav is exactly Home + Shop (verified,
- * docs/source-of-truth.md §A.4) — no search control, since nothing in the
- * source material evidences one. The cart trigger (Phase 6,
- * docs/phase-6-commerce-layer-report.md) is commerce architecture, not a
- * nav item, so it sits outside `navItems`.
+ * `nav-transition`). Nav items come from content/navigation.ts — Home/Shop
+ * are the live site's verified nav (docs/source-of-truth.md §A.4);
+ * Ingredients/Find Your Ritual are new pages this redesign adds, each fully
+ * built and content-backed, not placeholders. The inline nav only appears
+ * at `desktop:` and up — four items plus "Find Your Ritual" don't fit
+ * comfortably at tablet width, so 768–1023px uses the mobile drawer instead.
+ * The cart trigger (Phase 6, docs/phase-6-commerce-layer-report.md) is
+ * commerce architecture, not a nav item, so it sits outside `navItems`.
  */
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -63,8 +66,8 @@ export function Header() {
             />
           </Link>
 
-          <nav aria-label="Primary" className="hidden tablet:block">
-            <ul className="flex items-center gap-10">
+          <nav aria-label="Primary" className="hidden desktop:block">
+            <ul className="flex items-center gap-8">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -87,7 +90,7 @@ export function Header() {
               aria-expanded={menuOpen}
               aria-controls="mobile-nav-drawer"
               onClick={() => setMenuOpen(true)}
-              className="rounded-md p-2 text-ink-900 hover:bg-sage-100 tablet:hidden"
+              className="rounded-md p-2 text-ink-900 hover:bg-sage-100 desktop:hidden"
             >
               <VisuallyHidden>Open menu</VisuallyHidden>
               <svg
